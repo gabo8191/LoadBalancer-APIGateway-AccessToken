@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class MessageController {
-    
-    @Autowired
-    private Environment environment;
 
-    @GetMapping("/message")
-    public String getMessage() {
-        return "Hello! Eureka client from PORT number: " + environment.getProperty("local.server.port");
-    }
+  @Autowired
+  private Environment environment;
+
+  @GetMapping("/message")
+  public String getMessage() {
+    return "Hello! Eureka client from PORT number :" + environment.getProperty("local.server.port");
+  }
 }
