@@ -11,3 +11,15 @@ eureka:
       defaultZone: http://localhost:8761/eureka/ # URL of the Eureka Server
   instance:
     prefer-ip-address: true # Use IP instead of hostname for registration
+
+# JWT Configuration for Access Token Pattern
+# Implementation by Sebastián Cañón
+jwt:
+  secret: sebastianCanonJWT2024SecretKeyForLoadBalancerAccessTokenPattern123456789
+  expiration: 86400000 # 24 hours in milliseconds (1 day)
+
+# Logging configuration for JWT authentication
+logging:
+  level:
+    com.LoadBalancer_APIGateway_AccessToken.load_balancer.security: DEBUG
+    org.springframework.security: DEBUG
